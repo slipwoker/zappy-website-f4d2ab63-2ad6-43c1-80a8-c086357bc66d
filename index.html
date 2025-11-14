@@ -1,0 +1,553 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ניתוח שוק המניות המתקדם ביותר — Investing.com</title>
+  <meta name="description" content="גלה s&p 500 futures chart live מקצועי עם נתונים בזמן אמת, ניתוחי AI וכלי מסחר מתקדמים. הצטרף לאלפי משקיעים חכמים עוד היום!">
+  <meta name="keywords" content="s&amp;p 500 futures chart live, real time stock market quotes, trading charts, best stock charting software">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+/* Zappy Attribution Header Styles */
+.zappy-header {
+  position: static;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
+  padding: 16px 10px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 21px;
+}
+
+    .zappy-header p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-bottom: 0 !important;
+    }
+
+.zappy-header .zappy-link {
+  font-weight: 700;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.zappy-header .zappy-link:hover {
+  opacity: 0.7;
+}</style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+<!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: 'f4d2ab63-2ad6-43c1-80a8-c086357bc66d',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Zappy Attribution Header -->
+<div id="zappy-attribution-header" class="zappy-header" style="display: none;">
+  <p>Happily created by&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
+</div>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <div class="nav-brand">
+        <a href="/" class="logo-link">
+          <img src="assets/investing-com-logo.webp" alt="Investing.com" class="logo" />
+        </a>
+      </div>
+      
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      
+      <button class="phone-header-btn" aria-label="Call us">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/services">שירותים</a></li>
+        <li><a href="/about">אודות</a></li>
+      </ul>
+      
+      <div class="nav-cta-container">
+        <li class="nav-cta-item">
+          <a href="/contact" class="nav-cta-btn">צור קשר</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <img data-placeholder="hero-1" data-context="Wide panoramic view of modern financial trading floor with multiple screens displaying real-time stock market data, charts, and S&amp;P 500 futures, professional traders analyzing data" src="assets/investing-com-hero-hero-1.webp" alt="מסך מסחר פיננסי מתקדם עם נתוני שוק בזמן אמת" class="hero-img">
+    <div class="container hero-content">
+      <h1>ניתוח מתקדם של S&amp;P 500 Futures Chart Live</h1>
+      <h3>קבל נתונים בזמן אמת, ניתוחי AI וכלים מקצועיים לזיהוי הזדמנויות השקעה אסטרטגיות בשוק ההון</h3>
+      <div class="hero-cta">
+        <a href="/contact" class="btn-primary">התחל עכשיו</a>
+        <a href="/services" class="btn-secondary">גלה את השירותים</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2>למה לבחור ב-Real Time Stock Market Quotes שלנו?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>נתונים בזמן אמת</h3>
+          <p>קבל גישה מיידית לנתוני s&amp;p 500 futures chart live מעודכנים בכל שנייה, עם ביצועים מהירים וללא עיכובים. המערכת שלנו מספקת real time stock market quotes מדויקים מכל השווקים הגלובליים.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>ניתוח AI מתקדם</h3>
+          <p>השתמש בטכנולוגיית בינה מלאכותית מתקדמת לניתוח מגמות שוק, זיהוי דפוסים והמלצות השקעה חכמות. ה-trading charts שלנו מצוידים באלגוריתמים חכמים לתמיכה בהחלטות.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>כלי מסחר מקצועיים</h3>
+          <p>גלה את best stock charting software עם אינדיקטורים טכניים מתקדמים, גרפים אינטראקטיביים וכלי ניתוח מקיפים. המערכת שלנו מספקת trading charts ברמה מקצועית למשקיעים מתקדמים.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-newspaper"></i>
+          </div>
+          <h3>חדשות כלכליות מעודכנות</h3>
+          <p>קבל עדכוני חדשות פיננסיות בזמן אמת מהמקורות המהימנים ביותר, עם ניתוח מעמיק של השפעתן על השווקים והזדמנויות ההשקעה.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-showcase">
+    <div class="container">
+      <h2>השירותים המובילים שלנו</h2>
+      <div class="service-split">
+        <div class="service-content">
+          <h3>Real Time Stock Market Quotes</h3>
+          <p>המערכת שלנו מספקת real time stock market quotes מדויקים ומעודכנים מכל הבורסות הגלובליות. קבל גישה מיידית לנתוני מחירים, נפחי מסחר ושינויים באחוזים עבור אלפי מניות, מדדים ונכסים פיננסיים.</p>
+          <p>עם הטכנולוגיה המתקדמת שלנו, תוכל לעקוב אחר s&amp;p 500 futures chart live ולקבל התראות מיידיות על תנודות שוק משמעותיות. המערכת מאפשרת התאמה אישית מלאה של לוחות המחוונים והתראות לפי העדפותיך האישיות.</p>
+          <a href="/services" class="btn-primary">למד עוד</a>
+        </div>
+        <div class="service-image">
+          <img data-placeholder="service-1" data-context="Professional financial analyst viewing real-time stock market quotes on multiple computer screens showing S&amp;P 500 futures charts with live data updates" src="assets/investing-com-service-service-1.webp" alt="מסכי מסחר מקצועיים עם נתוני שוק בזמן אמת">
+        </div>
+      </div>
+
+      <div class="service-split reverse">
+        <div class="service-content">
+          <h3>ניתוח AI עם InvestingPro</h3>
+          <p>InvestingPro משלב בינה מלאכותית מתקדמת עם ניתוח פיננסי מקצועי כדי לספק תובנות עמוקות על הזדמנויות השקעה. המערכת מנתחת מיליוני נקודות מידע ומזהה דפוסים שאינם גלויים לעין.</p>
+          <p>קבל המלצות מבוססות נתונים לגבי מניות, אג"ח ונכסים אחרים, עם הערכות סיכון מדויקות ותחזיות ביצועים. ה-best stock charting software שלנו משתמש באלגוריתמים חכמים לזיהוי מגמות לפני השוק.</p>
+          <a href="/services" class="btn-primary">גלה את InvestingPro</a>
+        </div>
+        <div class="service-image">
+          <img data-placeholder="service-2" data-context="AI-powered investment analysis dashboard showing InvestingPro interface with machine learning algorithms analyzing stock patterns and market trends" src="assets/investing-com-service-service-2.webp" alt="ממשק ניתוח AI מתקדם של InvestingPro">
+        </div>
+      </div>
+
+      <div class="service-split">
+        <div class="service-content">
+          <h3>Trading Charts מתקדמים</h3>
+          <p>הגרפים שלנו מספקים את החוויה החזותית המתקדמת ביותר לניתוח טכני. עם trading charts אינטראקטיביים, תוכל לצייר קווי מגמה, להוסיף אינדיקטורים טכניים ולנתח דפוסי מחיר בקלות.</p>
+          <p>המערכת תומכת בעשרות סוגי גרפים שונים, מגרפי נרות יפניים ועד גרפים מתקדמים של נפח ומומנטום. כל גרף ניתן להתאמה אישית מלאה עם אפשרויות שמירה ושיתוף.</p>
+          <a href="/services" class="btn-primary">חקור את הכלים</a>
+        </div>
+        <div class="service-image">
+          <img data-placeholder="service-3" data-context="Advanced trading charts interface displaying multiple technical indicators, candlestick patterns, and interactive drawing tools for market analysis" src="assets/investing-com-service-service-3.webp" alt="גרפי מסחר מתקדמים עם אינדיקטורים טכניים">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">50M+</div>
+          <div class="stat-label">משתמשים פעילים</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">250+</div>
+          <div class="stat-label">מקורות נתונים</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">מעקב בזמן אמת</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100K+</div>
+          <div class="stat-label">נכסים פיננסיים</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="premium-data">
+    <div class="container">
+      <h2>נתוני פרמיום לקבלת החלטות חכמות</h2>
+      <div class="premium-grid">
+        <div class="premium-card">
+          <img data-placeholder="service-4" data-context="Premium financial data dashboard showing detailed company fundamentals, earnings reports, and financial ratios on professional interface" src="assets/investing-com-service-service-4.webp" alt="לוח מחוונים נתוני פרמיום פיננסיים">
+          <h3>ניתוח פונדמנטלי מעמיק</h3>
+          <p>גישה לדוחות כספיים מפורטים, יחסים פיננסיים מתקדמים והערכות שווי מקצועיות. המערכת שלנו מספקת ניתוח מקיף של כל חברה עם נתוני s&amp;p 500 futures chart live מעודכנים.</p>
+        </div>
+        <div class="premium-card">
+          <img data-placeholder="service-5" data-context="Real-time market alerts and notifications system showing price movements, volume changes, and breaking news alerts" src="assets/investing-com-service-service-5.webp" alt="מערכת התראות שוק בזמן אמת">
+          <h3>התראות חכמות ומותאמות</h3>
+          <p>הגדר התראות מותאמות אישית לתנועות מחיר, שינויים בנפח מסחר וחדשות חשובות. קבל עדכונים מיידיים על real time stock market quotes המשפיעים על התיק שלך.</p>
+        </div>
+        <div class="premium-card">
+          <img data-placeholder="service-6" data-context="Portfolio management interface showing diversified investment holdings, performance metrics, and risk analysis tools" src="assets/investing-com-service-service-6.webp" alt="ממשק ניהול תיק השקעות מתקדם">
+          <h3>ניהול תיק מתקדם</h3>
+          <p>עקוב אחר כל ההשקעות שלך במקום אחד עם כלי ניהול תיק מקצועיים. המערכת מספקת ניתוח ביצועים, ניהול סיכונים והמלצות לאיזון תיק מבוססות trading charts מתקדמים.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tools-showcase">
+    <div class="container">
+      <h2>Best Stock Charting Software לכל משקיע</h2>
+      <div class="tools-grid">
+        <div class="tool-item">
+          <img data-placeholder="service-7" data-context="Technical analysis tools showing moving averages, RSI, MACD, and Bollinger Bands on interactive stock charts" src="assets/investing-com-service-service-7.webp" alt="כלי ניתוח טכני מתקדמים על גרפי מניות">
+          <h3>אינדיקטורים טכניים</h3>
+          <p>גישה לעשרות אינדיקטורים טכניים מובילים כולל ממוצעים נעים, RSI, MACD, Bollinger Bands ועוד. כל אינדיקטור ניתן להתאמה מלאה לפי האסטרטגיה שלך.</p>
+        </div>
+        <div class="tool-item">
+          <img data-placeholder="service-8" data-context="Economic calendar interface displaying upcoming market events, earnings releases, and central bank announcements" src="assets/investing-com-service-service-8.webp" alt="לוח שנה כלכלי עם אירועי שוק חשובים">
+          <h3>לוח שנה כלכלי</h3>
+          <p>עקוב אחר אירועים כלכליים חשובים, פרסומי רווחים והחלטות בנקים מרכזיים. המערכת מספקת ניתוח השפעה צפויה על s&amp;p 500 futures chart live ושווקים נוספים.</p>
+        </div>
+        <div class="tool-item">
+          <img data-placeholder="service-9" data-context="Market screener tool interface showing filtered stock results based on custom criteria like P/E ratio, market cap, and dividend yield" src="assets/investing-com-service-service-9.webp" alt="כלי סינון מניות מתקדם עם קריטריונים מותאמים">
+          <h3>סורק מניות חכם</h3>
+          <p>סנן אלפי מניות לפי קריטריונים מותאמים אישית כמו יחס מחיר לרווח, שווי שוק, תשואת דיבידנד ועוד. מצא הזדמנויות השקעה בקלות עם best stock charting software שלנו.</p>
+        </div>
+        <div class="tool-item">
+          <img data-placeholder="service-10" data-context="Mobile trading app interface showing real-time stock quotes, interactive charts, and one-tap trading functionality" src="assets/investing-com-service-service-10.webp" alt="אפליקציית מסחר ניידת עם נתונים בזמן אמת">
+          <h3>אפליקציה ניידת</h3>
+          <p>קבל גישה מלאה לכל הכלים והנתונים מהסמארטפון שלך. האפליקציה מספקת real time stock market quotes, trading charts אינטראקטיביים וכלי מסחר מלאים בכל מקום.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>מוכן להתחיל את מסע ההשקעה החכמה שלך?</h2>
+      <p>הצטרף לאלפי משקיעים שכבר משתמשים בכלים המתקדמים שלנו לקבלת החלטות השקעה מושכלות. קבל גישה מיידית ל-s&amp;p 500 futures chart live, real time stock market quotes וניתוחי AI מתקדמים.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn-primary">התחל בחינם</a>
+        <a href="/services" class="btn-secondary">למד עוד על השירותים</a>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://wa.me/[whatsapp_handle]" target="_blank" class="whatsapp-float" aria-label="WhatsApp" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  
+    <!-- Legal Footer -->
+    <footer class="legal-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="all-rights-reserved">
+            <p>© 2025 Investing.com. כל הזכויות שמורות.</p>
+          </div>
+          <div class="footer-social"><a href="https://facebook.com/[facebook_handle]" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="https://instagram.com/[instagram_handle]" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/[whatsapp_handle]" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+          <div class="footer-legal">
+            <a href="privacy.html" aria-label="מדיניות פרטיות">
+              מדיניות פרטיות
+            </a>
+            <span class="separator">|</span>
+            <a href="accessibility.html" aria-label="נגישות">
+              נגישות
+            </a>
+            <span class="separator">|</span>
+            <a href="terms.html" aria-label="תנאי שימוש">
+              תנאי שימוש
+            </a>
+          </div>
+        </div>
+        <div class="zappy-attribution">
+          <p>נוצר באמצעות <a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Zappy</a></p>
+        </div>
+      </div>
+    </footer>
+
+
+<!-- Zappy Attribution Header Script -->
+<script>
+(function() {
+  var websiteId = 'f4d2ab63-2ad6-43c1-80a8-c086357bc66d';
+  
+  // Don't show header in preview mode
+  var currentUrl = window.location.href;
+  var isPreview = currentUrl.includes('/preview/') || 
+                  currentUrl.includes('/preview-fullscreen/') || 
+                  currentUrl.includes('localhost:5001') ||
+                  currentUrl.includes('localhost:3000');
+  
+  if (isPreview) {
+    return; // Exit early in preview mode
+  }
+  
+  fetch('https://api.zappy5.com/api/website/' + websiteId + '/tier')
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.showAttribution) {
+        var header = document.getElementById('zappy-attribution-header');
+        if (header) {
+          header.style.display = 'block';
+        }
+      }
+    })
+    .catch(function(error) {
+      console.error('Failed to check tier:', error);
+    });
+})();
+</script>
+    <div data-integration="accessibility:toolbar"></div>
+    <script src="script.js"></script>
+</body></html>
